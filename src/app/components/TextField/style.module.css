@@ -1,0 +1,61 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento um pouco maior entre label e campo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  width: 100%;
+  max-width: 450px; /* um pouco mais largo */
+  margin: 0 auto; /* centraliza caso use sozinho */
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Inputs e Textarea */
+.root input,
+.root textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #222;
+  background-color: #fafafa;
+  transition: all 0.25s ease;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Placeholder */
+.root input::placeholder,
+.root textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Hover */
+.root input:hover,
+.root textarea:hover {
+  border-color: #6c63ff;
+}
+
+/* Focus */
+.root input:focus,
+.root textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.25);
+}
+
+/* Textarea mais confortável */
+.root textarea {
+  min-height: 100px;
+  line-height: 1.5;
+}
+

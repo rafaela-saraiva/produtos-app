@@ -1,0 +1,14 @@
+/* Cabeçalho fixo no topo */
+header {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #f9f6f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
