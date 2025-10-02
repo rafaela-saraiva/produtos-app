@@ -8,6 +8,7 @@ export default function Nav() {
           <li><Link href="/">Início</Link></li>
           <li><Link href="/sobre">Sobre</Link></li>
           <li><Link href="/Contato">Contato</Link></li>
+          <li><Link href="/cadastrar-produto">Cadastrar produto</Link></li>
           <li><Link href="https://www.mercadolivre.com.br/" target="_blank" >Mercado Livre</Link></li>
         </ul>
       </nav>

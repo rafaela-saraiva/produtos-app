@@ -1,13 +1,43 @@
+'use client'
+import { useEffect, useState } from "react";
 import Produto from "../models/Produto";
-import Header from "./components/Header";
-import produtos from "./components/mocks/Produtos";
-import ProductCard from "./components/ProductCard";
-import ProductList from "./components/ProductList";
+import Header from "../components/Header";
+import produtos from "../components/mocks/Produtos";
+import ProductCard from "../components/ProductCard";
+import ProductList from "../components/ProductList";
 import "./page.css";
+import axios, { AxiosResponse } from 'axios';
+import Loading from "../components/Loading";
+
 
 
 export default function Home() {
+  
+  const [produtos, setProdutos] = useState([]);
+  const [isLoading, setIsLoading] =useState(true);
 
+  function sucesso(response: AxiosResponse) {
+    setProdutos(response.data);
+  }
+
+  function falha(){
+    alert("FALHOU!");
+  }
+  
+  function todoCaso(){
+    setIsLoading(false);
+  }
+
+
+  function loadProdutos(){
+  axios.get("https://produtos-server.onrender.com/api/produtos")
+  .then(sucesso)
+  .catch(falha)
+  .finally(todoCaso);
+  }
+
+  
+  
   function mapear(produto:Produto){
     return(
       <ProductCard
@@ -20,16 +50,19 @@ export default function Home() {
  
     )
   }
+
+  useEffect(loadProdutos, []);
+
   return (
     <>
-      <Header />
+       {(isLoading) && (<Loading/>)}
       <h1>Loja de roupa</h1>
       <h2>Venha ver!</h2>
 
       {/* Agora só lista os produtos vindos do mock */}
       <ProductList produtos={produtos} titulo={""} />
 
-      /* {/* Camisetas 
+       {/* Camisetas 
       <section className="camisetas">
         <h2>Camisetas</h2>
 

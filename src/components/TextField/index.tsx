@@ -12,6 +12,10 @@ type Props = {
     onChange?(texto: string): void;
 }
  
+
+
+
+
 export default function TextField(props: Props) {
  
     const [texto, setTexto] = useState(props.text);
@@ -45,9 +49,9 @@ export default function TextField(props: Props) {
                 placeholder={props.label}
                 value= {texto}
                 onChange={handleInputChange}
+                />
                 
 
-                />
             )
             }
  
