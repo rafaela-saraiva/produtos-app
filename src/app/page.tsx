@@ -18,6 +18,7 @@ export default function Home() {
 
   function sucesso(response: AxiosResponse) {
     setProdutos(response.data);
+    console.log(response.data);
   }
 
   function falha(){
@@ -43,7 +44,7 @@ export default function Home() {
       <ProductCard
       key={produto.id}
       nome={produto.nome}
-      img={produto.img}
+      fotoUrl={produto.fotoUrl}
       preco={produto.preco}
       descricao={produto.descricao}
       />
