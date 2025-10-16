@@ -56,6 +56,7 @@ export default function Home() {
 
   return (
     <>
+      
        {(isLoading) && (<Loading/>)}
       <h1>Loja de roupa</h1>
       <h2>Venha ver!</h2>
